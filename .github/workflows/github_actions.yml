@@ -28,3 +28,9 @@ jobs:
         uses: grafana/k6-action@v0.2.0
         with:
           filename: script.js -e DURATION=${{ vars.DURATION }}
+
+      # Build docker image
+      - name: Build the Docker image
+        run: docker build -t load-test --build-arg DURATION=${{ vars.DURATION }} .
+      
+      # After the docker image is built, push it to a container registry (such as AWS ECR)

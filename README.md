@@ -16,6 +16,12 @@ The duration can be changes as per the requirements
 
 It is a good idea to run tests locally first and when everything seems ok we can run the tests in cloud
 
+### Running tests in pipeline
+
+If you want to run load tests inside any CI/CD pipeline just pull the latest image from AWS ECR and run
+
+`docker run --name load-test -e DURATION="5m"`
+
 ### Reporting
 
 Reports can be seen on the K6 app here https://app.k6.io/projects/3637554
