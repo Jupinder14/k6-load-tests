@@ -14,7 +14,7 @@ export const options = {
   },
   scenarios: {
     GET_users_list_scenario: {
-      // Frequency: 60 requests/min
+      // Assume Frequency: 60 requests/min
       executor: 'constant-arrival-rate',
       exec: 'GET_users_list_load_test',
       preAllocatedVUs: 1,
@@ -23,7 +23,7 @@ export const options = {
       duration: `${__ENV.DURATION}`,
     },
     POST_user_scenario: {
-        // Frequency: 6 requests/min
+        // Assume Frequency: 6 requests/min
         executor: 'constant-arrival-rate',
         exec: 'POST_user_load_test',
         preAllocatedVUs: 1,
