@@ -12,4 +12,4 @@ RUN apt-get update &&\
     apt-get update &&\
     apt-get install k6
 
-CMD [ "sh", "-c", "k6 run -e DURATION=$DURATION script.js" ]
+CMD [ "sh", "-c", "k6 run -e BASE_URL=$BASE_URL -e DURATION=$DURATION script.js" ]

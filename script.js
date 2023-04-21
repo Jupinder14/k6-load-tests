@@ -1,4 +1,4 @@
-import { low_response_time, medium_response_time, zero_error_rate, projectId, high_response_time } from './utils.js';
+import { low_response_time, medium_response_time, error_rate, projectId, high_response_time } from './utils.js';
 
 import GET_users_list_test from './scripts/load_test_scripts/endpoints/GET_users_list.js';
 import POST_user_test from './scripts/load_test_scripts/endpoints/POST_user.js';
@@ -33,11 +33,11 @@ export const options = {
       }
   },
   thresholds: {
-    'http_req_failed{scenario:GET_users_list_scenario}': zero_error_rate,
-    'http_req_duration{scenario:GET_users_list_scenario}': high_response_time,
+    'http_req_failed{scenario:GET_users_list_scenario}': error_rate,
+    'http_req_duration{scenario:GET_users_list_scenario}': low_response_time,
 
-    'http_req_failed{scenario:POST_user_scenario}': zero_error_rate,
-    'http_req_duration{scenario:POST_user_scenario}': high_response_time,
+    'http_req_failed{scenario:POST_user_scenario}': error_rate,
+    'http_req_duration{scenario:POST_user_scenario}': medium_response_time,
   }
 };
 

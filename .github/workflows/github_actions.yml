@@ -27,10 +27,10 @@ jobs:
       - name: Run local k6 test
         uses: grafana/k6-action@v0.2.0
         with:
-          filename: script.js -e DURATION=${{ vars.DURATION }}
+          filename: script.js -e BASE_URL=${{ vars.BASE_URL }} -e DURATION=${{ vars.DURATION }}
 
       # Build docker image
       - name: Build the Docker image
-        run: docker build -t load-test --build-arg DURATION=${{ vars.DURATION }} .
+        run: docker build -t load-test --build-arg BASE_URL=${{ vars.BASE_URL }} --build-arg DURATION=${{ vars.DURATION }} .
       
-      # After the docker image is built, push it to a container registry (such as AWS ECR)
+      # After the docker image is built, push it to a container registry such as AWS ECR

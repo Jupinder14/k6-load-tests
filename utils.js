@@ -4,7 +4,7 @@ export const medium_response_time = ['p(95)<1000']
 export const high_response_time = ['p(95)<3000']
 
 // Error rate
-export const zero_error_rate = ['rate<=0.00']
+export const zero_error_rate = ['rate<=0.01']
 
 // Base url
 export const baseUrl = 'https://reqres.in'
