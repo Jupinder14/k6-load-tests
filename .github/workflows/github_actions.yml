@@ -28,7 +28,6 @@ jobs:
         uses: grafana/k6-action@v0.2.0
         with:
           filename: script.js -e DURATION=${{ vars.DURATION }}
-    steps:
-      - uses: actions/checkout@v2
+
       - name: Build the Docker image
-        run: docker build -t load-test --build-arg DURATION=${DURATION} .
+        run: docker build -t load-test --build-arg DURATION=${{ vars.DURATION }} .
